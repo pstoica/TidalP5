@@ -1,0 +1,56 @@
+s1 $ stack [
+  s "capture/4",
+  s "background" # color "<0>",
+  s "circle*16"
+    # n "6"
+    # dur "<4 1 6 0.5 10 20>"
+    # opacity (scale 0.3 0.8 $ slow 16 $ sine1)
+    # fill "<0>"
+    # opacity (scale 0.5 0.8 $ slow 4 $ sine1)
+    # r (scale 0.3 0.8 $ slow 4 $ saw1)
+    # x (scale 0.2 0.8 $ slow 13 $ sine1)
+    |+| x (scale (-0.1) 0.1 $ slow 6 $ sine1)
+    # y (scale 0.2 0.8 $ slow 2 $ tri1)
+    # strokeWeight (scale 0.2 4 $ slow 4 $ sine1)
+    # rotate (scale (0) (8) $ slow 4 $ sine1)
+    # rotateX (scale (-8) (8) $ slow 4 $ sine1)
+    # rotateY (scale (-8) (8) $ slow 6 $ sine1)
+    # beginend 0 (scale 0.01 0.25 $ slow 256 $ saw1)
+    # color (scale 1 8 $ slow 16 $ sine1)
+] # colors "eae5e8:2d3845:782073:a540d5:db3deb:5c3f7f:6345d4:0b5689:a2bd96"
+
+
+s1 $ stack [
+  s "capture/4",
+  s "background" # color "<0>",
+  s "<poly*128>"
+    # n "<3>"
+    # dur "<4 3 6 0.5 10 20>"
+    # opacity (scale 0.2 0.5 $ slow 16 $ sine1)
+    # fill "<0 0>"
+    # r (scale 0.1 0.3 $ slow 6 $ saw1)
+    # x (scale 0.2 0.8 $ slow 9 $ sine1)
+    # y (scale 0.2 0.8 $ slow 6 $ tri1)
+    # strokeWeight (scale 0.2 4 $ slow 4 $ sine1)
+    # rotateY (scale (-16) (16) $ slow 8 $ sine1)
+    # rotateX (scale (-8) (8) $ slow 8 $ sine1)
+    # rotate (scale (0) (2) $ slow 4 $ sine1)
+    # beginend 0 (scale 0.01 0.1 $ slow 256 $ saw1)
+    # color (scale 6 8 $ slow 3 $ sine1)
+] # colors "eae5e8:2d3845:782073:a540d5:db3deb:5c3f7f:6345d4:0b5689:a2bd96"
+
+
+hush
+
+
+#EAE5E8
+#2D3845
+#782073
+#A540D5
+#DB3DEB
+#5C3F7F
+#6345D4
+#0B5689
+#A2BD96
+#B7B14B
+#345E1C

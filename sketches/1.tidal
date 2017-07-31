@@ -1,0 +1,85 @@
+s1 $ stack [
+  s "[polygon]*12"
+    |=| strokeWeight (scale 0.1 1 $ slow 4 $ tri1)
+    |=| r (scale 0.5 0.6 $ slow 32 $ sine1)
+    |=| dur (scale 2 3 $ slow 4 $ sine1)
+    |=| rotate (scale 0 1 $ slow 8 $ zoom(0, 0.5) tri1)
+    |=| n "3",
+  s "[polygon]*12"
+    |=| strokeWeight 1
+    |=| fill "0 0 0 1"
+    |=| r (scale 0.1 0.15 $ slow 32 $ sine1)
+    |+| r (scale 0 0.1 $ slow 4 $ tri1)
+    |=| dur (scale 2 1.8 $ slow 2 $ tri1)
+    |=| rotate (scale 0 1 $ slow 2 $ zoom(0, 0.5) tri1)
+    |=| n "3"
+]
+
+s1 $ stack [
+  slow 9 $ s "record",
+  s "[polygon]*16"
+    |=| strokeWeight (scale 0.1 1.2 $ slow 32 $ sine1)
+    |=| r (scale 0 1 $ slow 9 $ zoom (0, 0.5) tri1)
+    |=| dur (scale 5 3 $ slow 2 $ tri1)
+    |=| rotate (scale 4 0 $ slow 4 $ zoom(0, 0.5) tri1)
+    |+| rotate "0.1 0.3 0.5 0.8 0.9"
+    |=| n "24",
+  slow 8 $ s "point*50"
+    |=| strokeWeight "5"
+    |=| dur "8"
+    |=| x (choose[0.1,0.2..0.9])
+    |=| y (listToPat[0.1,0.2..0.9]),
+  slow 8 $ s "poly*50"
+    |=| r "0.1"
+    |=| dur "8"
+    |=| n "4"
+    |=| strokeWeight (scale 1 8 $ slow 4 $ sine1)
+    |=| x (density 2 $ (listToPat[0.1,0.2..0.9]))
+    |=| y (density 3 $ listToPat[0.1,0.2..0.9])
+]
+
+s1 $ stack [
+  s "record/8",
+  s "polygon*64"
+    |=| n "[3 4 5 6 7 8 9 10]/16"
+    |=| rotate "0.125"
+    |=| opacity "0.2"
+    |=| dur "2"
+    |=| r "0.5"
+    |=| y (scale 0.4 0.6 $ slow 8 $ sine1)
+    |=| x (scale 0.4 0.6 $ slow 4 $ sine1)
+    |+| rotate (scale 0 4 $ slow 32 $ zoom(0, 0.5) tri1)
+    |+| rotate (scale 0 1 $ slow 9 $ sine1)
+    |+| rotate (scale 0 3 $ slow 64 $ sine1)
+]
+
+s1 $ stack [
+  whenmod 8 4 (density 8 . (|=| dur "0.1")) $ s "polygon"
+    |=| dur "0.5"
+    |=| r "0."
+    |=| n "[4 6 8 10]/4",
+  s "polygon*4"
+    |=| dur "4"
+    |=| r (scale 0.4 0.8 $ slow 16 $ tri1)
+    |=| n "[4 6 8]/2",
+  s "{polygon polygon}%3"
+    |=| n "{4 5 2 3 6}%3"
+    |=| r "0.2"
+    |=| rotate "0.125"
+    |=| dur "1"
+]
+
+
+s1 $ stack [
+  whenmod 8 4 (density 8 . (|=| dur "0.1")) $ s "polygon"
+    |=| dur "0.5"
+    |=| r "0."
+    |=| n "[4 6 8 10]/4",
+  s "polygon*16"
+    |=| dur "4"
+    |=| r (scale 0.1 0.8 $ slow 3 $ saw1)
+    |=| n "[4 6 8 10]*3"
+]
+
+
+hush

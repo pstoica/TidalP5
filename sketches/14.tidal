@@ -1,0 +1,123 @@
+cps (-1)
+
+cps (1)
+
+s1 $ stack [
+  s "background" # color "0",
+  s "poly*128"
+    # n "8"
+    # dur (scale 1 10 $ slow 2 $ sine1)
+    # rotate (scale 0 2 $ slow 8 $ tri1)
+    # opacity "0.5"
+    # fill "1"
+    # y "0.3"
+    |+| y (scale (-0.1) 0.4 $ slow 5 $ tri1)
+    # x (scale 0.4 0.6 $ slow 8 $ tri1)
+    |+| x (scale (-0.2) 0.2 $ slow 3.333 $ tri1)
+    # r (scale 0.1 0.3 $ slow 8 $ sine1)
+    # color (scale 0.5 2 $ slow 2 $ sine1),
+  slow (1.01) $ s "circle*4"
+    # dur (scale 1 10 $ slow 4 $ sine1)
+    # opacity "0.3"
+    # y "0.7"
+    |+| y (scale (-0.2) 0.2 $ slow 2 $ tri1)
+    # x (scale 0.4 0.6 $ slow 8 $ tri1)
+    |+| x (scale (-0.2) 0.2 $ slow 3.333 $ tri1)
+    # r (scale 0.2 0.5 $ slow 8 $ sine1)
+    # fill "1"
+    # color (scale 1 2 $ slow 8 $ sine1)
+] # colors "bb13fe:fe85a4:ffc513"
+
+
+
+s1 $ stack [
+  s "[~ capture]/2",
+  s "background" # color "0",
+  s "poly*128"
+    # n "3"
+    # dur (scale 0.2 10 $ slow 2 $ sine1)
+    # rotate (scale 0 4 $ slow 8 $ tri1)
+    # opacity (scale 0.1 0.4 $ slow 8 $ sine1)
+    # fill "1"
+    # y "0.3"
+    |+| y (scale (-0.1) 0.4 $ slow 5 $ tri1)
+    # x (scale 0.4 0.6 $ slow 8 $ tri1)
+    |+| x (scale (-0.2) 0.2 $ slow 3.333 $ tri1)
+    # r (scale 0.2 0.5 $ slow 4 $ sine1)
+    # color (scale 0.5 2 $ slow 2 $ sine1),
+  slow (1.01) $ s "poly*4"
+    # n "8"
+    # dur (scale 1 10 $ slow 4 $ sine1)
+    # opacity (scale 0.1 0.3 $ slow 8 $ sine1)
+    # y "0.7"
+    |+| y (scale (-0.2) 0.2 $ slow 2 $ tri1)
+    # x (scale 0.4 0.6 $ slow 8 $ tri1)
+    |+| x (scale (-0.2) 0.2 $ slow 3.333 $ tri1)
+    # r (scale 0.2 0.3 $ slow 8 $ sine1)
+    # fill "1"
+    # color (scale 1 2 $ slow 8 $ sine1)
+] # colors "bb13fe:fe85a4:ffc513"
+
+cps(1)
+
+
+hush
+
+s1 $ stack [
+  gtfo $ s "capture*2",
+  s "background" # color "0",
+  s "circle*64"
+    # n "3"
+    # dur (scale 0.2 0.2 $ slow 4 $ sine1)
+    # opacity "0.3"
+    # x "[0.1, 0.3, 0.5, 0.7, 0.9]"
+    # y "[0.1, 0.3, 0.5, 0.7, 0.9]"
+    # rotateX (scale (-4) 4 $ slow 8 $ sine1)
+    # rotateY (scale (-4) 4 $ slow 8 $ sine1)
+    # rotate (3/4)
+    # color "1"
+    # r (scale 0.4 0.6 $ slow 8 $ sine1)
+    # rotate (scale 0 32 $ slow 16 $ sine1)
+    # fill "[0 0 0 1]"
+    # color (scale 0.5 2 $ slow 8 $ sine1)
+    # strokeWeight "3"
+] # colors "bb13fe:fe85a4:ffc513"
+
+
+s1 $ stack [
+  s "capture",
+  s "background"
+    # color "1",
+  s "<poly*4 circle*7>"
+    # n "<3 4 4>"
+    # rotate (1/4)
+    # r (scale 0.01 0.3 $ slow 8 $ sine1)
+    # dur (scale 5 20 $ slow 8 $ sine1)
+    # x (scale 0.1 0.9 $ slow 5 $ sine1)
+    # y (scale 0.1 0.9 $ slow 4.5 $ sine1)
+    # fill "1"
+    # color (scale 1.5 3 $ slow 3 $ sine1)
+] # colors "dec5fe:ffffff:62f7b3"
+
+
+s1 $ stack [
+  s "capture",
+  s "background"
+    # color "1",
+  s "<poly*16>"
+    # n "<3 4 4>"
+    # rotate (1/4)
+    |+| rotate (scale 0 2 $ slow 32 $ sine1)
+    # r (scale 0.01 0.2 $ slow 8 $ sine1)
+    # dur (scale 5 10 $ slow 8 $ sine1)
+    # x "[0.1 0.3 ~, 0.5?, 0.9 ~ 0.7]"
+    |+| x (scale (-0.1) 0.1 $ slow 8 $ tri1)
+    # y (scale 0.1 0.9 $ slow 4.5 $ sine1)
+    # fill "1"
+    # color (scale 1.5 3 $ slow 3 $ sine1)
+] # colors "dec5fe:ffffff:62f7b3"
+
+
+] # colors "ca6b01:a13624:990f4b"
+
+hush

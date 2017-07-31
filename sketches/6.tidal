@@ -1,0 +1,34 @@
+cps (1)
+
+hush
+
+s1 $ stack [
+  s "background" # color "0",
+  s "arc*16"
+    # beginend "0" (scale 0.1 0.5 $ slow 8 $ sine1)
+    # dur "80"
+  # opacity "0.5"
+    # n "3 4 5 6 7 8"
+    # rotateY (scale (-4) (4) $ slow 3 $ sine1)
+    # rotateX (scale (-4) (4) $ slow 3 $ sine1)
+    # y "<0.1 0.3 0.5 0.7 0.9>"
+    # x "0.5"
+    # color (scale 2 4 $ slow 2 $ sine1)
+    # strokeWeight "40"
+] # colors "f6f2ea:191010:009a71:cc0073:ffec51"
+
+# colors "f6f2ea:191010:009a71:cc0073:ffec51"
+
+hush
+
+s1 $ s "box*8"
+  |=| beginend "0" "0.5"
+  # rotateY (scale (-4) (4) $ slow 3 $ sine1)
+  # rotateX (scale (-4) (4) $ slow 3 $ sine1)
+  |=| rotate (scale 0 0.5 $ slow 8 $ sine1)
+  |=| r (scale 0.2 0.8 $ slow 4 $ sine1)
+  |=| strokeWeight (scale 1 8 $ slow 32 $ sine1)
+  |=| dur "<10 1 5 9>"
+  |=| fill "<0 0 1>"
+  |=| color (scale 2 4 $ slow 8 $ sine1)
+  # colors "f6f2ea:191010:009a71:cc0073:ffec51"

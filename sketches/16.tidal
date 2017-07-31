@@ -1,0 +1,32 @@
+s1 $ stack [
+  s "capture",
+  s "background" # color "0",
+  s "circle*64"
+    # dur (scale 0.2 1.5 $ slow 8 $ sine1)
+    # n "4"
+    # rotate (1/4)
+    # y "[0.3, 0.5, 0.7]"
+    # x "[0.3, 0.5, 0.7]"
+    # r (scale 0.6 2 $ slow 8 $ sine1)
+    # strokeWeight "2"
+    # color (scale 2 2 $ slow 4 $ sine1)
+] # colors "2775c6:55a05a:f75503"
+
+s1 $ stack [
+  s "capture",
+  s "background" # color "1",
+  s "poly*8"
+    # dur (scale 0.8 3.0 $ slow 8 $ sine1)
+    # n "5"
+    # rotate (1/4)
+    # y "[0.3, 0.5, 0.7]"
+    # x "[0.3, 0.5, 0.7]"
+    # r (scale 0.8 1.5 $ slow 8 $ sine1)
+    # rotateX (scale (-0.2) 0.2 $ slow 4 $ sine1)
+    # rotateY (scale (-0.2) 0.2 $ slow 3 $ sine1)
+    # strokeWeight "5"
+    # color (scale 2 4 $ slow 8 $ sine1)
+] # colors "d87d86:b05eac:f29940:cdcf77"
+
+
+hush

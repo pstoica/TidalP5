@@ -1,0 +1,39 @@
+s1 $
+  stack [
+    (every 4 (fast 50) $ s "arc*8")
+      # n "4"
+      # dur "20"
+      # r (scale 0.1 0.9 $ slow 16 $ sine1)
+      # beginend "0" (scale 0.01 0.1 $ slow 32 $ tri1)
+      # rotate (scale 0 2 $ slow 2 $ sine1)
+      # y (scale 0.2 0.8 $ slow 4 $ sine1)
+      # x (scale 0.8 0.2 $ slow 8 $ sine1)
+      # rotateX (scale 0.2 0.8 $ slow 32 $ sine1)
+      # rotateY (scale 0.4 0.6 $ slow 32 $ sine1)
+      # fillColor "-1"
+      # strokeColor (scale 1 2 $ slow 16 $ sine1),
+    s "background" # fillColor "0"
+  ] # colors "1b2531:ffa62b:d68a94"
+
+cps (1)
+
+s1 $
+  stack [
+    (every 2 (fast 2) $ s "<poly*8>")
+      # n "<3 5 7>"
+      # dur "20"
+      # r (scale 0.1 0.3 $ slow 8 $ sine1)
+      # beginend "0" (scale 0.01 0.5 $ slow 32 $ tri1)
+      # rotate (scale 0 16 $ slow 8 $ saw1)
+      # y (scale 0.2 0.8 $ slow 4 $ saw1)
+      # x "<0.3 0.5 0.7>"
+      # rotateX (scale 0.2 4 $ slow 4 $ saw1)
+      # rotateY (scale 0.4 0.8 $ slow 64 $ saw1)
+      # opacity "0.5"
+      # fillColor "-1"
+      # strokeColor (scale 1 2 $ slow 16 $ sine1),
+    s "background" # fillColor "0"
+  ] # colors "ffd1de:d5b4fb:c44341"
+
+
+  hush

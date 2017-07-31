@@ -1,0 +1,32 @@
+hush
+
+s1 $ stack [
+  s "background" # color "5",
+  s "poly*32"
+    # fill "<0 0 0 0>"
+    # n "4"
+    # rotate (3/4)
+    # opacity "1"
+    # dur (scale 1 2 $ slow 8 $ sine1)
+    # x "[0.1, 0.2, 0.3, 0.5, 0.7, 0.8, 0.9]"
+    # y (scale 0.0 0.9 $ slow 2 $ sine1)
+    # strokeWeight "4"
+    # fill "1"
+    # r (scale 0.1 0.8 $ slow 4 $ sine1)
+    # rotateX (scale (-16) 16 $ slow 16 $ sine1)
+    # rotateX "1.2"
+    # color (scale 0 10 $ slow 1 $ saw1),
+  gtfo $ s "poly*8"
+    # n "3"
+    # dur (scale 1 4 $ slow 8 $ sine1)
+    # rotate (1/4)
+    # y (scale 0.7 0.9 $ slow 4 $ sine1)
+    # r (scale 0.01 0.2 $ slow 4 $ sine1)
+    # x "[0.1, 0.3, 0.5, 0.7, 0.9]"
+    # strokeWeight "1"
+    # rotateX (scale 0 8 $ slow 64 $ sine1)
+    # color (scale 0 1 $ slow 8 $ sine1)
+    |+| color "<3 6>"
+] # colors "34da93:66b7b8:33a2de:4d6be5:b676c9:5e4e71:df6f8d:f65a51:f39a50:ffffff"
+
+hush

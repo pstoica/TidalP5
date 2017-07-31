@@ -1,0 +1,5 @@
+build/
+exports/
+
+.DS_Store
+ffmpeg.txt

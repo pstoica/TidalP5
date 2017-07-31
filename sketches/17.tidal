@@ -1,0 +1,37 @@
+s1 $ stack [
+  gtfo $ s "capture",
+  s "background" # color "0",
+  sometimes (# dur "1") $ s "circle*32"
+    # dur (scale 0.01 0.09 $ rand)
+    # rotate (1/4)
+    # r "<0.7 0.35 0.8 1.5>"
+    # x "0.5"
+    # y "0.5"
+    # strokeWeight "2"
+    # rotateX (scale (-4) 4 $ rand)
+    # rotateY (scale (-4) 4 $ slow 4 $ sine1)
+    # rotate (scale 0 0.5 $ rand)
+    # n (choose[3,5,7,9])
+    # fill "0"
+    # color (choose[1,2,3,4,5,6])
+] # colors "ffffff:724ea4:4751c2:724ea4:d85267:ee5354:cbae57"
+
+
+s1 $ stack [
+  gtfo $ s "capture",
+  s "background" # color "0",
+  striate' 2 (1/64) $ s "poly*16"
+    # dur "0.05"
+    # rotate (1/4)
+    # r "0.1"
+    # x "[0.2, 0.8]"
+    # y (scale 0.2 0.8 $ slow 2 $ sine1)
+    # rotate (scale 0 0.5 $ rand)
+    # n (choose[3,5,7,9])
+    # fill "0"
+    # color (scale 1 6 $ slow 8 $ sine1)
+] # colors "ffffff:724ea4:4751c2:724ea4:d85267:ee5354:cbae57"
+
+
+
+hush

@@ -1,0 +1,151 @@
+let colorScheme = "D5B4FB:C44341:FFD1DE:280136:A2C0FE:5E1451:F2AB15:1E0200:A60056"
+
+cps(3)
+
+cps(-1)
+
+hush
+
+s1
+  $ stack [
+    slow 4 $
+    s "background"
+      # fillColor (scale 0 8 $ slow 32 $ sine1),
+    s "circle*8"
+      # strokeColor "-1"
+      # x (scale 0.25 0.75 $ slow 8 $ tri1)
+      # y (whenmod 8 4 (fast 64) $ scale 0.45 0.55 $ slow 3 $ sine1)
+      |+| y (scale (-0.3) 0.3 $ slow 32 $ sine1)
+      # r (scale 0.25 0.3 $ slow 8 $ sine1)
+      # fillColor (scale 1 4 $ slow 8 $ sine1)
+      # dur "0.1"
+  ] # colors colorScheme
+
+cps (0.9)
+
+s1
+  $ stack [
+    slow 4 $
+    s "background*64"
+      # fillColor (scale 0 4 $ slow 32 $ tri1),
+    s "<point*64 circle*16 poly*8 point*8>"
+      # n (choose[3,4,5,6,7])
+      |=| x (scale (0.25) 0.65 $ slow 8 $ rand)
+      # y (scale 0.35 0.65 $ slow 2 $ tri1)
+      |+| y (scale (-0.2) 0.2 $ rand)
+      # r (scale 0.15 0.5 $ slow 16 $ sine1)
+      # beginend "0" (scale 0.2 1 $ slow 16 $ sine1)
+      # rotate (scale 0 1 $ slow 8 $ sine1)
+      # strokeColor (scale 1 4 $ slow 8 $ sine1)
+      # strokeWeight (scale 1 14 $ slow 8 $ sine1)
+      # fillColor (scale 2 5 $ slow 16 $ sine1)
+      # fillColor (scale 1 4 $ slow 8 $ sine1)
+      # fillColor "-1"
+      # dur "2"
+  ] # colors colorScheme
+
+hush
+
+s1
+  $ stack [
+    slow 4 $
+    s "background*512"
+      # fillColor (scale 0 4 $ slow 32 $ tri1),
+    stack [
+      s "point*512"
+        # fillColor (scale 2 5 $ slow 16 $ sine1)
+        # fillColor (scale 1 4 $ slow 8 $ sine1)
+        # strokeWeight (scale 1 5 $ slow 8 $ sine1)
+        |+| strokeWeight (scale 0 15 $ rand),
+      s "[poly*16]"
+        # n (choose[3,4,5,6,7])
+        # r "0.09"
+        # beginend "0" (scale 0.2 1 $ slow 16 $ sine1)
+        # rotate (scale 0 1 $ slow 8 $ sine1)
+        # strokeColor "-1"
+        # fillColor "-1"
+    ]
+    # x (scale (0.2) 0.8 $ slow 8 $ rand)
+    # y (scale 0.2 0.8 $ slow 2 $ sine1)
+    # strokeColor (scale 1 4 $ slow 8 $ sine1)
+    # dur (scale 0.5 1 $ slow 8 $ sine1)
+  ] # colors colorScheme
+
+hush
+
+s1 $ stack [
+  s "background" # fillColor "3",
+  s "poly*32"
+    # n "<3 4 5 6 7 8 9 10>"
+    # dur "2"
+    # rotate (scale 0 8 $ slow 8 $ saw1)
+    # r (scale 0.01 0.2 $ slow 4 $ saw1)
+    # fillColor "-1"
+    # strokeWeight (scale 1 1 $ slow 32 $ sine1)
+    # strokeColor (scale 4 6 $ slow 8 $ sine1),
+  s "box*16"
+  # fillColor "-1"
+  # beginend (scale 0 0.5 $ slow 8 $ sine1) (scale 0.1 1.0 $ slow 32 $ sine1)
+  # r (scale 0.1 2 $ slow 2 $ saw1)
+  # rotate (scale 0 1 $ slow 4 $ saw1)
+  # dur "1"
+  # strokeColor (scale 2 4 $ slow 8 $ sine1)
+  # strokeWeight (scale 1 2 $ slow 32 $ sine1)
+] # colors colorScheme
+
+s1 $ stack [
+  s "background" # fillColor "0",
+  (whenmod 16 8 (fast 2) $ whenmod 6 3 (fast 2) $ whenmod 8 4 (fast 2) $ s "poly*2")
+    # n "8"
+    # dur "1"
+    # fillColor "-1"
+    # fillColor (scale 0.2 2 $ saw1)
+    # strokeColor "-1"
+    # scaleX (scale 0.01 1 $ slow 16 $ saw1)
+    # scaleY (scale 0.01 1 $ slow 8 $ saw1)
+    # rotate (scale 0 4 $ slow 8 $ saw1)
+    # x (scale 0.2 0.8 $ slow 3 $ saw1)
+    # y (scale 0.1 0.9 $ slow 2 $ saw1)
+] # colors "fdfdfd:10875d:c0fa8a"
+
+
+hush
+
+s1
+  $ stack [
+    s "background*4" # fillColor "0",
+    s "box*64"
+    # dur "1"
+    # fillColor "-1"
+    # scaleX (scale (-2) 1 $ slow 8 $ sine1)
+    # scaleY (scale (-2) 1 $ slow 8 $ sine1)
+    # x "[0.2,0.5,0.8]"
+    # y "[0.2,0.5,0.8]"
+    # z (scale (-800) 0 $ slow 8 $ sine1)
+    # strokeColor (scale 1 9 $ slow 8 $ saw1)
+    # strokeWeight "1"
+    # r "100"
+  ] # colors (colorScheme)
+
+s1 $ s "clear"
+
+hush
+
+s1
+  $ stack [
+    s "capture",
+    slow 4 $
+    s "background"
+      # fillColor (slow 4 $ listToPat([0,1..8])),
+    s "poly*8"
+      # n "4"
+      # strokeColor "-1"
+      # x (scale 0.25 0.75 $ slow 8 $ tri1)
+      # y (whenmod 8 4 (fast 4) $ scale 0.4 0.6 $ slow 3 $ sine1)
+      |+| y (scale (-0.3) 0.3 $ slow 32 $ tri1)
+      # r (scale 0.25 0.3 $ slow 8 $ sine1)
+      # fillColor (scale 1 4 $ slow 8 $ sine1)
+      # dur "1"
+  ] # colors colorScheme
+
+hush

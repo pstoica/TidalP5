@@ -1,0 +1,39 @@
+s1 $ stack [
+  s "capture/1",
+  s "background/1" # color "0",
+  s "circle*64"
+    # dur "4"
+    # n "7"
+    # opacity "0.2"
+    # dur (scale 4 10 $ slow 8 $ sine1)
+    # x (scale 0.3 0.7 $ slow 4 $ sine1)
+    # fill "0"
+    # y "<0.3 0.7>/1"
+    # strokeWeight (scale 0.1 1 $ slow 8 $ sine1)
+    # r (scale 0.4 0.5 $ slow 6 $ sine1)
+    # rotateY (scale (-4) 4 $ slow 3 $ sine1)
+    # rotateX (scale (-8) 8 $ slow 4 $ sine1)
+    # color (scale 3 5 $ slow 8 $ sine1)
+] # colors "ffffff:dfe7e1:d1c3a1:e0a920:f2c7c9:618e98:364c21:688769"
+
+
+s1 $ stack [
+  s "capture/1",
+  s "background/1" # color "0",
+  s "poly*128"
+    # dur "5"
+    # n "3"
+    # opacity "0.1"
+    # dur (scale 4 10 $ slow 8 $ sine1)
+    # x (scale 0.2 0.8 $ slow 2 $ saw1)
+    # fill "1"
+    # y (scale 0.2 0.8 $ slow 16 $ saw1)
+    # strokeWeight (scale 0.1 1 $ slow 8 $ sine1)
+    # r (scale 0.1 0.3 $ slow 6 $ sine1)
+    # rotateX (scale (-0.5) 0.5 $ slow 4 $ sine1)
+    # rotate (scale 0 5 $ slow 32 $ tri1)
+    # color (scale 3 5 $ slow 8 $ sine1)
+] # colors "ffffff:dfe7e1:d1c3a1:e0a920:f2c7c9:618e98:364c21:688769"
+
+
+hush

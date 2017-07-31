@@ -1,0 +1,61 @@
+s1 $
+  stack [
+    (every 2 (fast 4) $ s "<arc*16>")
+      # n "<9 5 7>"
+      # dur "20"
+      # r (scale 0.1 0.3 $ slow 8 $ sine1)
+      # beginend "0" (scale 0.5 1 $ slow 4 $ sine1)
+      # rotate (scale 0 0.5 $ slow 8 $ sine1)
+      # x (scale 0.2 0.8 $ slow 4 $ saw1)
+      # y (scale 0.2 0.8 $ slow 8 $ sine1)
+      # rotateX (scale 0.2 8 $ slow 1 $ saw1)
+      # rotateY (scale 0.2 8 $ slow 8 $ saw1)
+      # opacity "0.4"
+      # fill "0"
+      # color (scale 0.5 2 $ slow 16 $ sine1),
+    s "background" # color "0"
+  ] # colors "ffd1de:014d4d:040347"
+
+s1 $
+  stack [
+    (every 2 (fast 4) $ s "<arc*16>")
+      # n "<9 5 7>"
+      # dur "10"
+      # r (scale 0.1 0.5 $ slow 2 $ sine1)
+      # beginend "0" (scale 0.1 0.5 $ slow 4 $ sine1)
+      # rotate (scale 0 8 $ slow 8 $ sine1)
+      # x (scale 0.2 0.8 $ slow 4 $ saw1)
+      |+| x (scale 0 0.2 $ slow 3 $ saw1)
+      # y (scale 0.2 0.8 $ slow 2 $ saw1)
+      # rotateX (scale 0.8 8 $ slow 2 $ sine1)
+      # rotateY (scale 0.8 8 $ slow 6 $ sine1)
+      # opacity "0.5"
+      # fill "0"
+      # color (scale 0.5 2 $ slow 16 $ sine1),
+    s "background" # color "0"
+  ] # colors "ffd1de:014d4d:040347"
+
+s1 $
+  stack [
+    (every 2 (fast 4) $ s "<point*16>")
+      # n "<9 5 7>"
+      # dur "10"
+      # r (scale 0.1 0.5 $ slow 2 $ sine1)
+      # beginend "0" (scale 0.1 0.5 $ slow 4 $ sine1)
+      # rotate (scale 0 8 $ slow 8 $ sine1)
+      # x (scale 0.2 0.8 $ slow 4 $ saw1)
+      |+| x (scale 0 0.2 $ slow 3 $ saw1)
+      # y (scale 0.2 0.8 $ slow 2 $ saw1)
+      |+| y (scale 0 0.2 $ slow 3 $ saw1)
+      # strokeWeight (scale 5 20 $ slow 8 $ sine1)
+      # opacity "0.5"
+      # fill "0"
+      # color "<0.5 1 2>",
+    s "background" # color "0"
+  ] # colors "ffb7cd:962e8f:c9fe27"
+
+
+
+
+
+hush

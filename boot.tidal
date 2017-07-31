@@ -1,0 +1,65 @@
+import Sound.Tidal.OscStream
+
+let shape = Shape {
+        params = [
+          S "s" Nothing,
+          F "x" (Just 0.5),
+          F "y" (Just 0.5),
+          F "z" (Just 0),
+          F "r" (Just 0.5),
+          I "n" (Just 3),
+          F "begin" (Just 0),
+          F "end" (Just 1),
+          F "dur" (Just 1),
+          F "opacity" (Just 1),
+          F "rotate" (Just 0),
+          F "rotateX" (Just 0),
+          F "rotateY" (Just 0),
+          F "strokeWeight" (Just 1),
+          S "colors" (Just "C8C8C8:000000"),
+          F "color" (Just 0),
+          I "fill" (Just 0)
+        ],
+        cpsStamp = False,
+        latency = 0
+      }
+    shapeSlang = OscSlang {
+        path = "/note",
+        timestamp = NoStamp,
+        namedParams = False,
+        preamble = []
+      }
+    shapeStream = do
+      s <- makeConnection "127.0.0.1" 8010 shapeSlang
+      stream (Backend s $ (\_ _ _ -> return ())) shape
+    s = makeS shape "s"
+    x = makeF shape "x"
+    y = makeF shape "y"
+    z = makeF shape "z"
+    r = makeF shape "r"
+    n = makeI shape "n"
+    begin = makeF shape "begin"
+    end = makeF shape "end"
+    dur = makeF shape "dur"
+    opacity = makeF shape "opacity"
+    rotate = makeF shape "rotate"
+    rotateX = makeF shape "rotateX"
+    rotateY = makeF shape "rotateY"
+    strokeWeight = makeF shape "strokeWeight"
+    colors = makeS shape "colors"
+    color = makeF shape "color"
+    fill = makeI shape "fill"
+
+s1 <- shapeStream
+s2 <- shapeStream
+s3 <- shapeStream
+s4 <- shapeStream
+
+let hush = mapM_ ($ silence) [s1, s2, s3, s4]
+    beginend bpat durpat = (begin bpat) # (end $ (+) <$> bpat <*> durpat)
+    solo = (>>) hush
+    range start end step = takeWhile (<=end) $ iterate (+step) start
+    gtfo p = (const $ sound "~") p
+    cos1 = (0.25 ~>) $ (sine1)
+
+hush

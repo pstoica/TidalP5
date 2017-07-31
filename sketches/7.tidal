@@ -1,0 +1,26 @@
+s1 $ stack [
+  s "background" # color "0",
+  s "record/16",
+  gtfo $ s "arc"
+    # strokeWeight "20"
+    # beginend "0" (scale 0.01 0.3 $ slow 4 $ sine1)
+    # color (scale 1 2 $ slow 8 $ sine1),
+  gtfo $ s "arc*8"
+    # strokeWeight "20"
+    # beginend 0 (scale 0.01 0.5 $ slow 8 $ sine1)
+    # color (scale 2 3 $ slow 4 $ sine1),
+  s "arc*32"
+    # dur "<1 20 30>"
+    # opacity (scale 0.8 1 $ slow 4 $ sine1)
+    # r (scale 0.1 0.6 $ slow 32 $ sine1)
+    # rotateX (scale (-4) (2) $ slow 16 $ sine1)
+    # rotateY (scale (-4) (2) $ slow 16 $ sine1)
+    # x (scale 0.2 0.8 $ slow 8 $ sine1)
+    # strokeWeight (scale 0.5 1 $ slow 4 $ sine1)
+    # rotate (scale (-8) (8) $ slow 8 $ sine1)
+    # y (scale 0.2 0.8 $ slow 8 $ (0.25 ~>) $ (sine1))
+    # beginend 0 (scale 0.01 0.3 $ slow 32 $ saw1)
+    # color (scale 3 5 $ slow 16 $ sine1)
+] # colors "f3f0e9:c09174:271f1d:808b61:617c84:9a2336"
+
+hush
